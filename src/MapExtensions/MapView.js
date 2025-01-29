@@ -4,7 +4,7 @@ import MapView, {Marker} from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 import MapModal from './MapModal';
 
-export default function Map() {
+export default function MapMain() {
   const [location, setLocation] = useState();
   const [mapType, setMapType] = useState('standard');
   const [showTransit, setShowTransit] = useState(false);
