@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import Modal from 'react-native-modal';
+import MapDetails from './MapDetails';
 export default function MapModal({
   mapType,
   setMapType,
@@ -146,82 +147,13 @@ export default function MapModal({
                 </TouchableOpacity>
               ))}
             </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                width: '100%',
-                paddingHorizontal: 20,
-                marginTop: 5,
-                gap: 25
-              }}>
-              <TouchableOpacity
-                style={{
-                  gap: 10,
-                  alignItems: 'center',
-                }}
-                onPress={() => setTrafficBoolean(!trafficBoolean)}>
-                <View
-                  style={[
-                    {
-                      width: 60,
-                      height: 60,
-                      backgroundColor: 'white',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                    },
-                    trafficBoolean ? styles.selected : null,
-                  ]}>
-                  <Image
-                    style={{
-                      width: 52,
-                      height: 52,
-                    }}
-                    source={require('../../assets/layers/traffic.png')}
-                  />
-                </View>
-
-                <Text
-                  style={[
-                    {color: '#5e5e5e'},
-                    trafficBoolean ? styles.selectedText : null,
-                  ]}>
-                  Traffic
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{
-                  gap: 10,
-                  alignItems: 'center',
-                }}
-                onPress={() => setShowTransit(!showTransit)}>
-                <View
-                  style={[
-                    {
-                      width: 60,
-                      height: 60,
-                      backgroundColor: 'white',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                    },
-                    showTransit ? styles.selected : null,
-                  ]}>
-                  <Image
-                    style={{
-                      width: 52,
-                      height: 52,
-                    }}
-                    source={require('../../assets/layers/transit.png')}
-                  />
-                </View>
-
-                <Text
-                  style={[
-                    {color: '#5e5e5e'},
-                    showTransit ? styles.selectedText : null,
-                  ]}>
-                  Transit
-                </Text>
-              </TouchableOpacity>
+            <View>
+              <MapDetails
+                trafficBoolean={trafficBoolean}
+                setTrafficBoolean={setTrafficBoolean}
+                showTransit={showTransit}
+                setShowTransit={setShowTransit}
+              />
             </View>
           </View>
         </View>
