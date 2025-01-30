@@ -1,6 +1,6 @@
 import {PermissionsAndroid, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import MapView, {Marker} from 'react-native-maps';
+import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 import MapModal from './MapModal';
 
@@ -66,7 +66,7 @@ export default function MapMain() {
       {location ? (
         <View style={{flex: 1}}>
           <MapView
-            provider={'google'}
+            provider={PROVIDER_GOOGLE}
             style={{flex: 1}}
             initialRegion={{
               latitude: location.coords.latitude,
